@@ -1,15 +1,9 @@
 package com.example.recyclerview_menucontexto
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.ContextMenu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
-import android.widget.AdapterView.AdapterContextMenuInfo
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
