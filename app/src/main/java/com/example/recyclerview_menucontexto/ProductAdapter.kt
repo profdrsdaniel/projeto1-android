@@ -43,7 +43,7 @@ class ProductAdapter(
             .into(holder.imageProduct)
 
         holder.nameProduct.text = items[position].name
-        holder.priceProduct.text = items[position].price
+        holder.priceProduct.text = items[position].price.convertToMoneyWithSymbol()
 
     }
 

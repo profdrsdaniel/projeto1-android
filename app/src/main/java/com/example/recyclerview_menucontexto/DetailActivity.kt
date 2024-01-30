@@ -28,6 +28,6 @@ class DetailActivity : AppCompatActivity() {
 
 
         name.text = productBundle?.name
-        price.text = "R$ ${productBundle?.price}"
+        price.text = productBundle?.price?.convertToMoneyWithSymbol()
     }
 }
