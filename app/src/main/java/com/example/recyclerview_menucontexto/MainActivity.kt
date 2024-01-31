@@ -1,33 +1,29 @@
 package com.example.recyclerview_menucontexto
 
-import android.content.Intent
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private val productViewModel: ProductViewModel by viewModels()
-    private lateinit var adapter: ProductAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Recyclerview
-        val recycler = findViewById<RecyclerView>(R.id.rcListOfProducts)
-        val items = productViewModel.getProducts()
+        val toolbar = findViewById<Toolbar>(R.id.my_toolbar)
+        val menuBottom = findViewById<BottomNavigationView>(R.id.bottomMenu)
+        val navController = Navigation.findNavController(this, R.id.my_nav_host_fragment)
 
-        // :: É um operador que cria uma referencia para funções, assim podemos usar como no
-        // exemplo abaixo.
-        adapter = ProductAdapter(items, ::goToDetail)
-        recycler.adapter = adapter
+        NavigationUI.setupWithNavController(menuBottom, navController)
+        setSupportActionBar(toolbar)
+        configureToolbar(title = "Home", enableBackButton = false)
     }
 
-    private fun goToDetail(item: Product) {
-        Intent(this, DetailActivity::class.java).apply {
-            putExtra("data", item)
-            startActivity(this)
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
