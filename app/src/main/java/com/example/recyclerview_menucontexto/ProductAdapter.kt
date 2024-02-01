@@ -4,11 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.PopupMenu
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.example.recyclerview_menucontexto.databinding.ListProductItemBinding
 
 class ProductAdapter(
     private val items: MutableList<Product>,
@@ -21,46 +19,42 @@ class ProductAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         this.context = parent.context
 
-        //Layout inflater é responsável por transformar o XML em uma classe onde podemos acessar os
-        //atributos dessa classe.
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.list_product_item, parent, false)
+        val binding =
+            ListProductItemBinding.inflate(LayoutInflater.from(context), parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.itemView.rootView.setOnLongClickListener {
-            showPopupMenu(it, position)
-            true
+        with(items[position]) {
+            holder.bind(this)
         }
-
-        holder.itemView.setOnClickListener {
-            goToDetail(items[position])
-        }
-
-        Glide.with(holder.itemView.context).load(items[position].urlImage).centerCrop()
-            .into(holder.imageProduct)
-
-        holder.nameProduct.text = items[position].name
-        holder.priceProduct.text = items[position].price.convertToMoneyWithSymbol()
-
     }
 
     override fun getItemCount() = items.size
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageProduct: ImageView = itemView.findViewById(R.id.imgProduct)
-        val nameProduct: TextView = itemView.findViewById(R.id.tvProductName)
-        val priceProduct: TextView = itemView.findViewById(R.id.tvProductPrice)
+    inner class ViewHolder(private val binding: ListProductItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(product: Product) {
+            binding.product = product
+
+            binding.root.setOnLongClickListener {
+                showPopupMenu(it, product)
+                true
+            }
+
+            binding.root.setOnClickListener {
+                goToDetail(product)
+            }
+        }
     }
 
-    private fun showPopupMenu(view: View, position: Int) {
+    fun showPopupMenu(view: View, product: Product) {
         PopupMenu(context, view).apply {
             setOnMenuItemClickListener { item ->
                 when (item.itemId) {
                     R.id.context_menu_item_remove -> {
-                        removeItem(items[position])
+                        removeItem(product)
                         true
                     }
 

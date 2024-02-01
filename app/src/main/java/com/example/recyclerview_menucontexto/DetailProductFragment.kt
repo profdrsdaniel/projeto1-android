@@ -5,21 +5,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
+import com.example.recyclerview_menucontexto.databinding.FragmentDetailProductBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DetailProductFragment : Fragment() {
+
+    private lateinit var binding: FragmentDetailProductBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail_product, container, false)
+    ): View {
+        binding = FragmentDetailProductBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -32,15 +32,8 @@ class DetailProductFragment : Fragment() {
 
         activity?.findViewById<BottomNavigationView>(R.id.bottomMenu)?.visibility = View.GONE
 
-        val name = view.findViewById<TextView>(R.id.tvProductName)
-        val price = view.findViewById<TextView>(R.id.tvProductPrice)
-        val image = view.findViewById<ImageView>(R.id.imgProduct)
-
-        Glide.with(this)
-            .load(productBundle?.urlImage)
-            .centerCrop()
-            .into(image)
-        name.text = productBundle?.name
-        price.text = productBundle?.price?.convertToMoneyWithSymbol()
+        with(binding) {
+            this.product = productBundle
+        }
     }
 }
