@@ -3,11 +3,11 @@
 <data>
     <variable
         name="adapter"
-        type="com.example.recyclerview_menucontexto.ProductAdapter" />
+        type="com.example.recyclerview_menucontexto.presentation.adapters.ProductAdapter" />
 
     <variable
         name="viewModel"
-        type="com.example.recyclerview_menucontexto.ProductViewModel" />
+        type="com.example.recyclerview_menucontexto.presentation.viewmodel.ProductViewModel" />
 </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/cardview_dark_background"
-        tools:context=".HomeFragment">
+        tools:context=".presentation.fragments.HomeFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcListOfProducts"

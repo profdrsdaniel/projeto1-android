@@ -1,4 +1,4 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,10 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.recyclerview_menucontexto.presentation.adapters.ProductAdapter
+import com.example.recyclerview_menucontexto.presentation.viewmodel.ProductViewModel
+import com.example.recyclerview_menucontexto.R
+import com.example.recyclerview_menucontexto.commons.extensions.configureToolbar
 import com.example.recyclerview_menucontexto.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

@@ -1,4 +1,4 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.presentation.bindingadapters
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

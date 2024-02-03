@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.recyclerview_menucontexto.HomeFragment"
+        android:name="com.example.recyclerview_menucontexto.presentation.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailProductFragment"
-        android:name="com.example.recyclerview_menucontexto.DetailProductFragment"
+        android:name="com.example.recyclerview_menucontexto.presentation.fragments.DetailProductFragment"
         android:label="fragment_detail_product"
         tools:layout="@layout/fragment_detail_product" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.recyclerview_menucontexto.ProfileFragment"
+        android:name="com.example.recyclerview_menucontexto.presentation.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

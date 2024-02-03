@@ -4,7 +4,7 @@
     <data>
         <variable
             name="product"
-            type="com.example.recyclerview_menucontexto.Product" />
+            type="com.example.recyclerview_menucontexto.domain.model.Product" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"

@@ -1,4 +1,4 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.presentation.fragments
 
 import android.os.Build
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.recyclerview_menucontexto.domain.model.Product
+import com.example.recyclerview_menucontexto.R
+import com.example.recyclerview_menucontexto.commons.extensions.configureToolbar
 import com.example.recyclerview_menucontexto.databinding.FragmentDetailProductBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

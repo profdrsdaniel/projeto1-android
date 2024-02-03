@@ -1,4 +1,4 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.recyclerview_menucontexto.commons.extensions.configureToolbar
 import com.example.recyclerview_menucontexto.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {

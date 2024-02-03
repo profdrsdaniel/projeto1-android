@@ -1,10 +1,11 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.data.local
 
-import androidx.lifecycle.ViewModel
+import com.example.recyclerview_menucontexto.commons.extensions.convertToMoneyWithSymbol
+import com.example.recyclerview_menucontexto.domain.model.Product
 
-class ProductViewModel : ViewModel() {
+class ProductLocalDataSource {
 
-    fun getProducts() = mutableListOf(
+    fun getProducts() = listOf(
         Product(
             urlImage = "https://t4.ftcdn.net/jpg/06/93/09/47/240_F_693094707_Eavnydwp6Su2Tx9REPzSZxDmEbElu0Az.jpg",
             name = "Laranja",

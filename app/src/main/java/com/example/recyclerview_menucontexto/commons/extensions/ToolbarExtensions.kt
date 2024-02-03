@@ -1,4 +1,4 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.commons.extensions
 
 import androidx.appcompat.app.AppCompatActivity
 

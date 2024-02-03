@@ -1,4 +1,4 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.presentation.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerview_menucontexto.domain.model.Product
+import com.example.recyclerview_menucontexto.R
 import com.example.recyclerview_menucontexto.databinding.ListProductItemBinding
 
 class ProductAdapter(

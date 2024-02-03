@@ -1,10 +1,12 @@
-package com.example.recyclerview_menucontexto
+package com.example.recyclerview_menucontexto.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.example.recyclerview_menucontexto.R
+import com.example.recyclerview_menucontexto.commons.extensions.configureToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

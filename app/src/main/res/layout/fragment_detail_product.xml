@@ -3,7 +3,7 @@
     <data>
         <variable
             name="product"
-            type="com.example.recyclerview_menucontexto.Product" />
+            type="com.example.recyclerview_menucontexto.domain.model.Product" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
