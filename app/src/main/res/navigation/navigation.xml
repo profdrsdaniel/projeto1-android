@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.recyclerview_menucontexto.presentation.fragments.ProfileFragment"
+        android:name="com.example.recyclerview_menucontexto.presentation.fragments.NewProductFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_new_product" />
 </navigation>

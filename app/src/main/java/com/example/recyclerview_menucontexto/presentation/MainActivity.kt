@@ -8,7 +8,9 @@ import androidx.navigation.ui.NavigationUI
 import com.example.recyclerview_menucontexto.R
 import com.example.recyclerview_menucontexto.commons.extensions.configureToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

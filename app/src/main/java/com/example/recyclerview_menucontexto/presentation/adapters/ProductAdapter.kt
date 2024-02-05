@@ -11,7 +11,8 @@ import com.example.recyclerview_menucontexto.R
 import com.example.recyclerview_menucontexto.databinding.ListProductItemBinding
 
 class ProductAdapter(
-    private val items: MutableList<Product>,
+    private val items: List<Product>,
+    private val deleteProduct: (name: String) -> Unit,
     private val goToDetail: (item: Product) -> Unit
 ) :
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
@@ -69,7 +70,6 @@ class ProductAdapter(
     }
 
     fun removeItem(product: Product) {
-        this.items.remove(product)
-        notifyDataSetChanged()
+        deleteProduct(product.name)
     }
 }

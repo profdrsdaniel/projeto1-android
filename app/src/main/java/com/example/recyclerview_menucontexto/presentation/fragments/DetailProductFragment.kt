@@ -13,7 +13,9 @@ import com.example.recyclerview_menucontexto.R
 import com.example.recyclerview_menucontexto.commons.extensions.configureToolbar
 import com.example.recyclerview_menucontexto.databinding.FragmentDetailProductBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailProductFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailProductBinding

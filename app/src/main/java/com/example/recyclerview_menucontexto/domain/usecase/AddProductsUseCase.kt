@@ -5,6 +5,6 @@ import com.example.recyclerview_menucontexto.domain.model.Product
 import com.example.recyclerview_menucontexto.domain.repository.ProductRepository
 import javax.inject.Inject
 
-class GetProductsUseCase @Inject constructor(private val repository: ProductRepository) {
-    suspend operator fun invoke(): List<Product> = repository.getProducts()
+class AddProductsUseCase @Inject constructor(private val repository: ProductRepository) {
+    suspend operator fun invoke(product: Product) = repository.addProduct(product)
 }
